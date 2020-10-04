@@ -1,4 +1,4 @@
-package com.spring.process.controller;
+package com.spring.process.manager;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,11 +15,11 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Executor {
+public class ExecutorService {
 	
 	private static String workingDirectory = "/Users/hemasundar";
 	private static String outputPath = "src/main/java/data/output.txt";
-	private static final Logger logger = LogManager.getLogger(Executor.class);
+	private static final Logger logger = LogManager.getLogger(ExecutorService.class);
 	
 	public static void writeOutput(String output) {
 		

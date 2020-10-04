@@ -1,4 +1,4 @@
-package com.spring.process.controller;
+package com.spring.process.manager;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProcessController {
+public class ExecutorController {
 
-	private static final Logger logger = LogManager.getLogger(ProcessController.class);
+	private static final Logger logger = LogManager.getLogger(ExecutorController.class);
 
 	@Autowired
-	private Executor executor;
+	private ExecutorService executor;
 
 	@RequestMapping(value = "/command", method = RequestMethod.POST, consumes = "text/plain")
 	public void runCommand(@RequestBody String commandPayLoad) throws Exception {
